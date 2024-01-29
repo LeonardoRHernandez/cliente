@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <!-- Incluir los estilos de Materialize (asegúrate de incluir la biblioteca en tu proyecto) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="todo.component.css">
+</head>
+<body>
+
+  <header class="header inicio">
+    <div class=" contenedor contenido-header">
+        <div class="nav-wrapper barra">
+            <a href="/">
+                <img src="assets/img/logo.svg" alt="Logotipo de Bienes Raices">
+            </a>
+        
+        </div>         
+    </div>
+    
+</header>
+<main>
+
+        <h6 class="texto">Ver todas las Casas <a class=" modal-trigger material-icons" (click)="listarK()">listar</a></h6>
+
+        <!-- Contenedor de las tarjetas -->
+        <div class="row">
+          <!-- Iterar sobre la lista de casas y mostrar cada una en una tarjeta -->
+
+
+          <div class="col s12 m4" *ngFor="let casa of listaCasas">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/img/anuncio2.jpg" alt="anuncio">
+
+                    </div>
+                    <div class=" card-content ">
+                        <span class="card-title">{{ casa.nombre }}</span>
+                        <p>Descripción: {{ casa.descripcion.slice(0, 50) }}{{ casa.descripcion.length > 100 ? '...' : '' }}</p>
+                        <p class="precio">$ {{ casa.precio }}</p>
+                        <ul class="iconos-caracteristicas">
+                            <li>
+                                <img class="icono" loading="lazy" src="assets/img/icono_wc.svg" alt="icono wc">
+                                <p>{{ casa.banios }}</p>
+                            </li>
+                            <li>
+                                <img class="icono" loading="lazy" src="assets/img/icono_estacionamiento.svg" alt="icono estacionamiento">
+                                <p>{{ casa.estacionamiento }}</p>
+                            </li>
+                            <li>
+                                <img class="icono" loading="lazy" src="assets/img/icono_dormitorio.svg" alt="icono habitaciones">
+                                <p>{{ casa.habitaciones }}</p>
+                            </li>
+                        </ul>
+                        <h6 class="texto">Comprar Propiedad <a class="modal-trigger material-icons boton-amarillo-block" href="#modalC">shopping_cart</a></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalC" class="modal">
+            <div class="modal-content">
+              <h4>Comprar</h4>
+              <div class="row">
+                <div class="input-field col s12">
+                    <label>id vendedor </label>
+                    <input [(ngModel)]="compras.id_vendedor"  type="text" class="validate">
+                  </div>
+                <div class="input-field col s12">
+                  <label>id casa </label>
+                  <input   [(ngModel)]="compras.id_casa"  type="text" class="validate">
+                </div>
+                
+                <div class="input-field col s6">
+                  <label>Fecha </label>
+                  <input   [(ngModel)]="compras.fecha"  type="Date" class="validate">
+                </div>
+                <div class="input-field col s6">
+                  <label>id_usuario </label>
+                  <input   [(ngModel)]="compras.id_usuario"  type="text" class="validate">
+                </div>
+              </div>
+              <div class="row">
+            </div>
+          </div>
+            <div class="modal-footer">
+              <a class="btn" (click)="registroCompra()">Agregar Compra</a>
+              <a class="modal-close btn-flat">Cancelar</a>
+                
+            </div>
+          </div>
+
+</main>
+  
+    
+
+  <!-- Incluir los scripts de Materialize (asegúrate de incluir la biblioteca en tu proyecto) -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <!-- Inicializar algunos elementos de Materialize -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Inicializar etiquetas de Materialize
+      M.AutoInit();
+    });
+  </script>
+
+</body>
+</html>

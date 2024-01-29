@@ -1,0 +1,124 @@
+
+<div>
+    <h6>Agregar Cita <a class="modal-trigger material-icons" href="#modal">edit</a></h6>
+    <h6>Ver todas las Citas <a class="modal-trigger material-icons" (click)="listar()" href="#modal2">listar</a></h6>
+    <h6>Ver una cita <a class="modal-trigger material-icons" href="#modal3">person</a></h6>
+    <h6>eliminar una cita <a class="modal-trigger material-icons" href="#modal4">delete</a></h6>
+  </div>
+
+    <!-- Modal Structure -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <h4>Crear Cita</h4>
+        <div class="row">
+          <div class="input-field col s12">
+            <label>id de la casa  </label>
+            <input   [(ngModel)]="citas.id_casaCita"  type="text" class="validate">
+          </div>
+          <div class="input-field col s12">
+            <label>id vendedor </label>
+            <input [(ngModel)]="citas.id_vendedorCita"  type="text" class="validate">
+          </div>
+          <div class="input-field col s6">
+            <label>Fecha </label>
+            <input   [(ngModel)]="citas.fecha"  type="Date" class="validate">
+          </div>
+          <div class="input-field col s6">
+            <label>id_usuario </label>
+            <input   [(ngModel)]="citas.id_usuarioCita"  type="text" class="validate">
+          </div>
+        </div>
+        <div class="row">
+      </div>
+    </div>
+      <div class="modal-footer">
+        <a class="btn" (click)="registroCita()">Agregar Cita</a>
+        <a class="modal-close btn-flat">Cancelar</a>
+          
+      </div>
+    </div>
+
+
+    <div id="modal2" class="modal">
+      <div class="modal-content">
+        <h4>Todas las citas</h4>
+        <div class="row">
+          <table>
+            <thead>
+              <tr>
+                <th>Casa</th>
+                <th>Vendedor</th>
+                <th>Fecha</th>
+                <th>Usuario</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let citas of listaCitas">
+                <td>{{ citas.id_casaCita }}</td>
+                <td>{{ citas.id_vendedorCita }}</td>
+                <td>{{ citas.fecha }}</td>
+                <td>{{ citas.id_usuarioCita}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="modal-close btn-flat">Cancelar</a>
+      </div>
+    </div>
+
+
+    <div id="modal3" class="modal">
+      <div class="modal-content">
+        <h4>Ingresa el id de la cita a buscar </h4>
+        <div class="input-field col s12">
+          <label>id </label>
+          <input [(ngModel)]="citas.id" type="text" class="validate">
+          <a class="btn" (click)="listarOne(citas.id)">Buscar Cita</a>
+        </div>
+        <div class="row">
+          <table *ngIf="citaBuscado">
+            <thead>
+              <tr>
+                <th>Casa</th>
+                <th>Vendedor</th>
+                <th>Fecha</th>
+                <th>Usuario</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ citaBuscado.id_casaCita }}</td>
+                <td>{{ citaBuscado.id_vendedorCita }}</td>
+                <td>{{ citaBuscado.fecha }}</td>
+                <td>{{ citaBuscado.id_usuarioCita}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="modal-close btn-flat">Cancelar</a>
+      </div>
+    </div>
+
+    <div id="modal4" class="modal">
+      <div class="modal-content">
+        <h4>Ingresa el id de la cita a eliminar </h4>
+        <div class="input-field col s12">
+          <label>id </label>
+          <input [(ngModel)]="citas.id" type="text" class="validate">
+          <a class="btn" (click)="eliminarCita(citas.id)">Eliminar Cita</a>
+        </div>
+        <div class="row">
+          <div *ngIf="citaEliminado" class="col s12">
+            <p>{{ citaEliminado }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="modal-close btn-flat">Cancelar</a>
+      </div>
+    </div>
+  

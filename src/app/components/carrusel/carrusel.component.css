@@ -1,0 +1,127 @@
+@import '~material-design-icons/iconfont/material-icons.css';
+
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.8;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+p {
+    color: black;
+    font-size: 2rem;
+}
+.contenedor {
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+a {
+    text-decoration: none;
+}
+
+img,
+picture {
+    width: 100%;
+    display: block;
+}
+
+h1, h2, h3 {
+
+    margin: 5rem / 2 0;
+    font-weight: 300;
+    text-align: center;
+
+    
+}
+
+h1 {
+    font-size: 3.8rem;
+}
+h2 {
+    font-size: 3.4rem;
+}
+h3 {
+    font-size: 3rem;
+    color: white;
+}
+h4 {
+    font-size: 2.6rem;
+}
+
+.header {
+    background-color: #333333;
+    padding: 1rem 0 3rem 0;
+}
+
+.header.inicio {
+    background-position: center center;
+    background-size: cover;
+}
+.contenido-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.barra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3rem;
+}
+
+.contenedor_img{
+    position: relative;
+}
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    z-index: 2;
+    
+}
+
+
+.material-icons{
+    width: 100%;
+    text-align: center;
+}
+.texto{
+    text-align: center;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    padding: 1rem;
+    border-top: none;
+}
+.responsive-img{
+    width: 700px;
+}
+.footer {
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+.footer-text{
+    text-align: center;
+    color: white;
+}
+.page-footer{
+    background-color:#333333;
+
+}

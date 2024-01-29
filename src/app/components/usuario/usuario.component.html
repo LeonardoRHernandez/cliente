@@ -1,0 +1,122 @@
+
+
+<div>
+  <h6>Agregar Usuario <a class="modal-trigger material-icons" href="#modal">edit</a></h6>
+  <h6>Ver todos los usuarios <a class="modal-trigger material-icons" (click)="listar()" href="#modal2">listar</a></h6>
+  <h6>Ver solo un usuario <a class="modal-trigger material-icons" href="#modal3">person</a></h6>
+  <h6>eliminar un usuario <a class="modal-trigger material-icons" href="#modal4">delete</a></h6>
+</div>
+
+  
+
+
+  <!-- Modal Structure -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h4>Usuario Nuevo</h4>
+      <div class="row">
+        <div class="input-field col s12">
+          <label>nombre </label>
+          <input   [(ngModel)]="usuario.nombre"  type="text" class="validate">
+        </div>
+        <div class="input-field col s12">
+          <label>telefono </label>
+          <input [(ngModel)]="usuario.telefono"  type="text" class="validate">
+        </div>
+        <div class="input-field col s6">
+          <label>correo </label>
+          <input   [(ngModel)]="usuario.correo"  type="text" class="validate">
+        </div>
+        <div class="input-field col s6">
+          <label>contraseña </label>
+          <input   [(ngModel)]="usuario.contrasenia"  type="text" class="validate">
+        </div>
+      </div>
+      <div class="row">
+    </div>
+  </div>
+    <div class="modal-footer">
+        <a class="btn" (click)="registro()">Agregar Usuario</a>
+        <a class="modal-close btn-flat">Cancelar</a>
+        
+    </div>
+  </div>
+
+    <div id="modal2" class="modal">
+      <div class="modal-content">
+        <h4>Todos los usuarios</h4>
+        <div class="row">
+          <table>
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Correo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let usuario of listaUsuarios">
+                <td>{{ usuario.nombre }}</td>
+                <td>{{ usuario.telefono }}</td>
+                <td>{{ usuario.correo }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="modal-close btn-flat">Cancelar</a>
+      </div>
+    </div>
+
+    <div id="modal3" class="modal">
+      <div class="modal-content">
+        <h4>Ingresa el id del usuario a buscar </h4>
+        <div class="input-field col s12">
+          <label>id </label>
+          <input [(ngModel)]="usuario.id" type="text" class="validate">
+          <a class="btn" (click)="listarOne(usuario.id)">Buscar Usuario</a>
+        </div>
+        <div class="row">
+          <table *ngIf="usuarioBuscado">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Correo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ usuarioBuscado.nombre }}</td>
+                <td>{{ usuarioBuscado.telefono }}</td>
+                <td>{{ usuarioBuscado.correo }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="modal-close btn-flat">Cancelar</a>
+      </div>
+    </div>
+
+    <div id="modal4" class="modal">
+      <div class="modal-content">
+        <h4>Ingresa el id del usuario a eliminar </h4>
+        <div class="input-field col s12">
+          <label>id </label>
+          <input [(ngModel)]="usuario.id" type="text" class="validate">
+          <a class="btn" (click)="eliminarUsuario(usuario.id)">Eliminar Usuario</a>
+        </div>
+        <div class="row">
+          <div *ngIf="usuarioEliminado" class="col s12">
+            <p>{{ usuarioEliminado }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="modal-close btn-flat">Cancelar</a>
+      </div>
+    </div>
+

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienes Raices</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="principal.component.css">
+</head>
+<body>
+    <header class="header inicio">
+        <div class=" contenedor contenido-header">
+            <div class="nav-wrapper barra">
+                <a href="/">
+                    <img src="assets/img/logo.svg" alt="Logotipo de Bienes Raices">
+                </a>
+
+             
+            </div>
+            <div class="derecha">
+                <nav class="navegacion">
+                    <a (click)="nosotros()">Nosotros</a>
+                    <a (click)="carrusel()">Carrusel</a>
+                    <a (click)="todoCasas()">Casas</a>
+                    <a (click)="login()">Login</a>
+                </nav>
+            </div>
+            
+            <h1>Venta de Casas y Departamentos  Exclusivos de Lujo</h1>
+        </div>
+        
+    </header>
+    <main class="container section contenedor seccion">
+        <div class="row">
+            <div class="col s12">
+                <h1>Más Sobre Nosotros</h1>
+                <div class="iconos-nosotros">
+                    <div class="icono">
+                        <img src="assets/img/icono1.svg" alt="Icono seguridad" loading="lazy">
+                        <h3>Seguridad</h3>
+                        <p>Possimus, suscipit repudiandae. Autem deserunt aliquid deleniti sit minus consectetur obcaecati molestiae dolorem natus dolores reiciendis tempore, explicabo cum nobis laudantium. Voluptates?</p>
+                    </div>
+                    <div class="icono">
+                        <img src="assets/img/icono2.svg" alt="Icono Precio" loading="lazy">
+                        <h3>Precio</h3>
+                        <p>Possimus, suscipit repudiandae. Autem deserunt aliquid deleniti sit minus consectetur obcaecati molestiae dolorem natus dolores reiciendis tempore, explicabo cum nobis laudantium. Voluptates?</p>
+                    </div>
+                    <div class="icono">
+                        <img src="assets/img/icono3.svg" alt="Icono Tiempo" loading="lazy">
+                        <h3>A Tiempo</h3>
+                        <p>Possimus, suscipit repudiandae. Autem deserunt aliquid deleniti sit minus consectetur obcaecati molestiae dolorem natus dolores reiciendis tempore, explicabo cum nobis laudantium. Voluptates?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+    </main>
+
+    <section class="seccion contenedor">
+        <h2>Casas y Depas en Venta</h2>
+    
+        <div class="contenedor-anuncios">
+            <div class="col s12 m4 anuncio">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/img/anuncio1.jpg" alt="anuncio">
+
+                    </div>
+                    <div class="contenido-anuncio">
+                        <h3>Casa de Lujo en el Lago</h3>
+                        <p>Casa en el lago con excelente vista, acabados de lujo a un excelente precio</p>
+                        <p class="precio">$3,0000,000</p>
+                        <ul class="iconos-caracteristicas">
+                            <li>
+                                <img class="icono" loading="lazy" src="assets/img/icono_wc.svg" alt="icono wc">
+                                <p>3</p>
+                            </li>
+                            <li>
+                                <img class="icono" loading="lazy" src="assets/img/icono_estacionamiento.svg" alt="icono estacionamiento">
+                                <p>3</p>
+                            </li>
+                            <li>
+                                <img class="icono" loading="lazy" src="assets/img/icono_dormitorio.svg" alt="icono habitaciones">
+                                <p>4</p>
+                            </li>
+                        </ul>
+                   
+                        <a href="#modal" class="modal-trigger boton-amarillo-block">Agendar Cita</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col s12 m4 anuncio">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/img/anuncio2.jpg" alt="anuncio">
+
+                    </div>
+                    <div class="contenido-anuncio">
+                        <h3>Casa terminados de lujo</h3>
+                        <p>Casa en el lago con excelente vista, acabados de lujo a un excelente precio</p>
+                        <p class="precio">$3,0000,000</p>
+                        <ul class="iconos-caracteristicas">
+                            <li>
+                                <img class="icono" loading="lazy" src="assets/img/icono_wc.svg" alt="icono wc">
+                                <p>3</p>
+                            </li>
+                            <li>
+                                <img class="icono" loading="lazy" src="assets/img/icono_estacionamiento.svg" alt="icono estacionamiento">
+                                <p>3</p>
+                            </li>
+                            <li>
+                                <img class="icono" loading="lazy" src="assets/img/icono_dormitorio.svg" alt="icono habitaciones">
+                                <p>4</p>
+                            </li>
+                        </ul>
+                        
+                        <a href="#modal" class="modal-trigger boton-amarillo-block">Agendar Cita</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col s12 m4 anuncio">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/img/anuncio3.jpg" alt="anuncio">
+            
+                    </div>
+                    <div class="contenido-anuncio">
+                        <h3>Casa con alberca de lujo</h3>
+                        <p>Casa en el lago con excelente vista, acabados de lujo a un excelente precio</p>
+                        <p class="precio">$3,0000,000</p>
+                        <ul class="iconos-caracteristicas">
+                            <li>
+                                <img class="icono" loading="lazy" src="assets/img/icono_wc.svg" alt="icono wc">
+                                <p>3</p>
+                            </li>
+                            <li>
+                                <img class="icono" loading="lazy" src="assets/img/icono_estacionamiento.svg" alt="icono estacionamiento">
+                                <p>3</p>
+                            </li>
+                            <li>
+                                <img class="icono" loading="lazy" src="assets/img/icono_dormitorio.svg" alt="icono habitaciones">
+                                <p>4</p>
+                            </li>
+                        </ul>
+                       
+                        <a href="#modal" class="modal-trigger boton-amarillo-block">Agendar Cita</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="right-align">
+            <a (click)="todoCasas()" class="boton-verde">Ver Todas</a>
+        </div>
+    </section>
+
+    
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+              <h4>Crear Cita</h4>
+              <div class="row">
+                <div class="input-field col s12">
+                  <label class="active" for="nombre_casa">id de la casa  </label>
+                  <input id="nombre_casa"  [(ngModel)]="citas.id_casaCita"  type="text" class="validate">
+                </div>
+                <div class="input-field col s12">
+                  <label class="active" for="id_vendedor" >id vendedor </label>
+                  <input id="id_vendedor"  [(ngModel)]="citas.id_vendedorCita"  type="text" class="validate">
+                </div>
+                <div class="input-field col s6">
+                  <label class="active" for="fecha_cita">Fecha </label>
+                  <input  id="fecha_cita" [(ngModel)]="citas.fecha"  type="Date" class="validate">
+                </div>
+                <div class="input-field col s6">
+                  <label class="active" for="id_usuario">id_usuario </label>
+                  <input  id="id_usuario" [(ngModel)]="citas.id_usuarioCita"  type="text" class="validate">
+                </div>
+              </div>
+              <div class="row">
+            </div>
+          </div>
+            <div class="modal-footer">
+              <a class="btn" (click)="registroCita()">Agregar Cita</a>
+              <a class="modal-close btn-flat">Cancelar</a>
+                
+            </div>
+          </div>
+
+    <section class="container section imagen-contacto">
+        <h2>Encuentra la casa de tus sueños</h2>
+        <p>Donde tus sueños encuentran un hogar, estamos para asesorarte.</p>
+        <p  class="boton-amarillo">Contáctanos</p>
+    </section>
+    <footer class="page-footer">
+        <div class="row">
+          <div class="col s12">
+            <p class="footer-text">&copy; 2024 Todos los derechos reservados</p>
+          </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+</html>

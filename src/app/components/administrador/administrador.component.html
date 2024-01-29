@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login con Materialize</title>
+  <!-- Incluir los estilos de Materialize (asegúrate de incluir la biblioteca en tu proyecto) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="administrador.component.css">
+</head>
+<body>
+
+  <header class="header inicio">
+    <div class=" contenedor contenido-header">
+        <div class="nav-wrapper barra">
+            <a href="/">
+                <img src="assets/img/logo.svg" alt="Logotipo de Bienes Raices">
+            </a>
+        
+        </div>         
+    </div>
+    
+</header>
+
+<main>
+    <h1 class="Titulo_Administrador">
+        Consola Administrador 
+    </h1>
+    
+    <div class="contenedor_img">
+      <img src="assets/img/header.jpg" alt="imagen header">
+
+        <div class="container">
+            
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="card">
+                      <div class="card-content">
+                        <div class="titulo" >Vendedores </div>
+                            <h6 class="texto">Agregar Vendedor <a class="modal-trigger material-icons" href="#modal">edit</a></h6>
+                            <h6 class="texto">Ver todos los Vendedores <a class="modal-trigger material-icons" (click)="listarV()" href="#modal2">listar</a></h6>
+                            <h6 class="texto">Ver solo un Vendedor <a class="modal-trigger material-icons" href="#modal3">person</a></h6>
+                            <h6 class="texto">eliminar un Vendedor <a class="modal-trigger material-icons" href="#modal4">delete</a></h6>
+                        <!-- Contenido específico del bloque de vendedor -->
+                      </div>
+                      
+                    </div>
+                  </div>
+
+                  <div class="col s12 m4">
+                    <div class="card">
+                      <div class="card-content">
+                        <div class="titulo" >Usuarios </div>
+                        <h6 class="texto" >Agregar Usuario <a class="modal-trigger material-icons" href="#modalU">edit</a></h6>
+                        <h6 class="texto" >Ver todos los usuarios <a class="modal-trigger material-icons" (click)="listarU()"  href="#modal2U">listar</a></h6>
+                        <h6 class="texto" >Ver solo un usuario <a class="modal-trigger material-icons" href="#modal3U">person</a></h6>
+                        <h6 class="texto" >eliminar un usuario <a class="modal-trigger material-icons" href="#modal4U">delete</a></h6>
+                        <!-- Contenido específico del bloque de vendedor -->
+                      </div>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="card">
+                      <div class="card-content">
+                        <div class="titulo" >Citas </div>
+                        <h6 class="texto">Agregar Cita <a class="modal-trigger material-icons" href="#modalC">edit</a></h6>
+                        <h6 class="texto">Ver todas las Citas <a class="modal-trigger material-icons" (click)="listarC()" href="#modal2C">listar</a></h6>
+                        <h6 class="texto">Ver una cita <a class="modal-trigger material-icons" href="#modal3C">event</a></h6>
+                        <h6 class="texto">eliminar una cita <a class="modal-trigger material-icons" href="#modal4C">delete</a></h6>
+                        <!-- Contenido específico del bloque de vendedor -->
+                      </div>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="card">
+                      <div class="card-content">
+                        <div class="titulo" >Casas </div>
+                        <h6 class="texto" >Agregar Casa <a class="modal-trigger material-icons" href="#modalK">edit</a></h6>
+                        <h6 class="texto" >Ver todas las Casas <a class="modal-trigger material-icons"  (click)="listarK()" href="#modal2K">listar</a></h6>
+                        <h6 class="texto" >Ver una Casa <a class="modal-trigger material-icons" href="#modal3K">home</a></h6>
+                        <h6 class="texto" >eliminar una Casa <a class="modal-trigger material-icons" href="#modal4K">delete</a></h6>
+                        <!-- Contenido específico del bloque de vendedor -->
+                      </div>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="card">
+                      <div class="card-content">
+                        <div class="titulo" >Administrador </div>
+                        <h6 class="texto" >Agregar Administrador <a class="modal-trigger material-icons" href="#modalA">edit</a></h6>
+                        <h6 class="texto" >Ver todos los Administradores <a class="modal-trigger material-icons" (click)="listarA()" href="#modal2A">listar</a></h6>
+                        <h6 class="texto" >Ver un Administrador <a class="modal-trigger material-icons" href="#modal3A">person</a></h6>
+                        <h6 class="texto" >eliminar un Administrador <a class="modal-trigger material-icons" href="#modal4A">delete</a></h6>
+                        <!-- Contenido específico del bloque de vendedor -->
+                      </div>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="card">
+                      <div class="card-content">
+                        <div class="titulo" >Compras </div>
+                        <h6 class="texto" >Ver todas las Compras <a class="modal-trigger material-icons"  (click)="listarCO()" href="#modal2CO">listar</a></h6>
+                        <h6 class="texto" >Ver una Compra <a class="modal-trigger material-icons" href="#modal3CO">shopping_cart</a></h6>
+                        <!-- Contenido específico del bloque de vendedor -->
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-align">
+                <p class="boton-verde">Salir<a class="modal-trigger material-icons" (click)="Salir()">exit_to_app</a></p>
+            </div>
+
+                
+
+
+        </div>
+
+      
+
+      
+
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <h4>Vendedor Nuevo</h4>
+          <div class="row">
+            <div class="input-field col s12">
+              <label class="active" >nombre </label>
+              <input   [(ngModel)]="vendedor.nombre"  type="text" class="validate">
+            </div>
+            <div class="input-field col s12">
+              <label class="active" >telefono </label>
+              <input [(ngModel)]="vendedor.telefono"  type="text" class="validate">
+            </div>
+            <div class="input-field col s6">
+              <label class="active" >correo </label>
+              <input   [(ngModel)]="vendedor.correo"  type="text" class="validate">
+            </div>
+            <div class="input-field col s6">
+              <label class="active" >contraseña </label>
+              <input   [(ngModel)]="vendedor.contrasenia"  type="text" class="validate">
+            </div>
+          </div>
+          <div class="row">
+        </div>
+      </div>
+        <div class="modal-footer">
+          <a class="btn" (click)="registroVendedor()">Agregar vendedor</a>
+          <a class="modal-close btn-flat">Cancelar</a>
+            
+        </div>
+      </div>
+      
+  
+      
+      <div id="modal2" class="modal">
+        <div class="modal-content">
+          <h4>Todos los Vendedores</h4>
+          <div class="row">
+            <table>
+              <thead>
+                <tr>
+                    <th>id</th>
+                  <th>Nombre</th>
+                  <th>Teléfono</th>
+                  <th>Correo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let vendedor of listaVendedor">
+                    <td>{{ vendedor.id }}</td>
+                  <td>{{ vendedor.nombre }}</td>
+                  <td>{{ vendedor.telefono }}</td>
+                  <td>{{ vendedor.correo }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a class="modal-close btn-flat">Cancelar</a>
+        </div>
+      </div>
+  
+      <div id="modal3" class="modal">
+        <div class="modal-content">
+          <h4>Ingresa el id del vendedor a buscar </h4>
+          <div class="input-field col s12">
+            <label class="active" >id </label>
+            <input [(ngModel)]="vendedor.id" type="text" class="validate">
+            <a class="btn" (click)="listarOneV(vendedor.id)">Buscar Vendedor</a>
+          </div>
+          <div class="row">
+            <table *ngIf="vendedorBuscado">
+              <thead>
+                <tr>
+                    <th>id</th>
+                  <th>Nombre</th>
+                  <th>Teléfono</th>
+                  <th>Correo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td>{{ vendedorBuscado.id }}</td>
+                  <td>{{ vendedorBuscado.nombre }}</td>
+                  <td>{{ vendedorBuscado.telefono }}</td>
+                  <td>{{ vendedorBuscado.correo }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a class="modal-close btn-flat">Cancelar</a>
+        </div>
+      </div>
+  
+      <div id="modal4" class="modal">
+        <div class="modal-content">
+          <h4>Ingresa el id del vendedor a eliminar </h4>
+          <div class="input-field col s12">
+            <label class="active" >id </label>
+            <input [(ngModel)]="vendedor.id" type="text" class="validate">
+            <a class="btn" (click)="eliminarVendedor(vendedor.id)">Eliminar vendedor</a>
+          </div>
+          <div class="row">
+            <div *ngIf="vendedorEliminado" class="col s12">
+              <p>{{ vendedorEliminado }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a class="modal-close btn-flat">Cancelar</a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Modal Cita -->
+    <div id="modalC" class="modal">
+        <div class="modal-content">
+          <h4>Crear Cita</h4>
+          <div class="row">
+            <div class="input-field col s12">
+              <label>id de la casa  </label>
+              <input   [(ngModel)]="citas.id_casaCita"  type="text" class="validate">
+            </div>
+            <div class="input-field col s12">
+              <label>id vendedor </label>
+              <input [(ngModel)]="citas.id_vendedorCita"  type="text" class="validate">
+            </div>
+            <div class="input-field col s6">
+              <label>Fecha </label>
+              <input   [(ngModel)]="citas.fecha"  type="Date" class="validate">
+            </div>
+            <div class="input-field col s6">
+              <label>id_usuario </label>
+              <input   [(ngModel)]="citas.id_usuarioCita"  type="text" class="validate">
+            </div>
+          </div>
+          <div class="row">
+        </div>
+      </div>
+        <div class="modal-footer">
+          <a class="btn" (click)="registroCita()">Agregar Cita</a>
+          <a class="modal-close btn-flat">Cancelar</a>
+            
+        </div>
+      </div>
+  
+  
+      <div id="modal2C" class="modal">
+        <div class="modal-content">
+          <h4>Todas las citas</h4>
+          <div class="row">
+            <table>
+              <thead>
+                <tr>
+                    <th>Id</th>
+                  <th>Casa</th>
+                  <th>Vendedor</th>
+                  <th>Fecha</th>
+                  <th>Usuario</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let citas of listaCitas">
+                    <td>{{ citas.id }}</td>
+                  <td>{{ citas.id_casaCita }}</td>
+                  <td>{{ citas.id_vendedorCita }}</td>
+                  <td>{{ citas.fecha }}</td>
+                  <td>{{ citas.id_usuarioCita}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a class="modal-close btn-flat">Cancelar</a>
+        </div>
+      </div>
+  
+  
+      <div id="modal3C" class="modal">
+        <div class="modal-content">
+          <h4>Ingresa el id de la cita a buscar </h4>
+          <div class="input-field col s12">
+            <label>id </label>
+            <input [(ngModel)]="citas.id" type="text" class="validate">
+            <a class="btn" (click)="listarOneC(citas.id)">Buscar Cita</a>
+          </div>
+          <div class="row">
+            <table *ngIf="citaBuscado">
+              <thead>
+                <tr>
+                    <th>Id</th>
+                  <th>Casa</th>
+                  <th>Vendedor</th>
+                  <th>Fecha</th>
+                  <th>Usuario</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td>{{ citaBuscado.id }}</td>
+                  <td>{{ citaBuscado.id_casaCita }}</td>
+                  <td>{{ citaBuscado.id_vendedorCita }}</td>
+                  <td>{{ citaBuscado.fecha }}</td>
+                  <td>{{ citaBuscado.id_usuarioCita}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a class="modal-close btn-flat">Cancelar</a>
+        </div>
+      </div>
+  
+      <div id="modal4C" class="modal">
+        <div class="modal-content">
+          <h4>Ingresa el id de la cita a eliminar </h4>
+          <div class="input-field col s12">
+            <label>id </label>
+            <input [(ngModel)]="citas.id" type="text" class="validate">
+            <a class="btn" (click)="eliminarCita(citas.id)">Eliminar Cita</a>
+          </div>
+          <div class="row">
+            <div *ngIf="citaEliminado" class="col s12">
+              <p>{{ citaEliminado }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a class="modal-close btn-flat">Cancelar</a>
+        </div>
+      </div>
+    
+
+      <!-- Modal Usuario -->
+  <div id="modalU" class="modal">
+    <div class="modal-content">
+      <h4>Usuario Nuevo</h4>
+      <div class="row">
+        <div class="input-field col s12">
+          <label>nombre </label>
+          <input   [(ngModel)]="usuario.nombre"  type="text" class="validate">
+        </div>
+        <div class="input-field col s12">
+          <label>telefono </label>
+          <input [(ngModel)]="usuario.telefono"  type="text" class="validate">
+        </div>
+        <div class="input-field col s6">
+          <label>correo </label>
+          <input   [(ngModel)]="usuario.correo"  type="text" class="validate">
+        </div>
+        <div class="input-field col s6">
+          <label>contraseña </label>
+          <input   [(ngModel)]="usuario.contrasenia"  type="text" class="validate">
+        </div>
+      </div>
+      <div class="row">
+    </div>
+  </div>
+    <div class="modal-footer">
+        <a class="btn" (click)="registroU()">Agregar Usuario</a>
+        <a class="modal-close btn-flat">Cancelar</a>
+        
+    </div>
+  </div>
+
+    <div id="modal2U" class="modal">
+      <div class="modal-content">
+        <h4>Todos los usuarios</h4>
+        <div class="row">
+          <table>
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Correo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let usuario of listaUsuarios">
+                <td>{{ usuario.id }}</td>
+                <td>{{ usuario.nombre }}</td>
+                <td>{{ usuario.telefono }}</td>
+                <td>{{ usuario.correo }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="modal-close btn-flat">Cancelar</a>
+      </div>
+    </div>
+
+    <div id="modal3U" class="modal">
+      <div class="modal-content">
+        <h4>Ingresa el id del usuario a buscar </h4>
+        <div class="input-field col s12">
+          <label>id </label>
+          <input [(ngModel)]="usuario.id" type="text" class="validate">
+          <a class="btn" (click)="listarOneU(usuario.id)">Buscar Usuario</a>
+        </div>
+        <div class="row">
+          <table *ngIf="usuarioBuscado">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Correo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ usuarioBuscado.id }}</td>
+                <td>{{ usuarioBuscado.nombre }}</td>
+                <td>{{ usuarioBuscado.telefono }}</td>
+                <td>{{ usuarioBuscado.correo }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="modal-close btn-flat">Cancelar</a>
+      </div>
+    </div>
+
+    <div id="modal4U" class="modal">
+      <div class="modal-content">
+        <h4>Ingresa el id del usuario a eliminar </h4>
+        <div class="input-field col s12">
+          <label>id </label>
+          <input [(ngModel)]="usuario.id" type="text" class="validate">
+          <a class="btn" (click)="eliminarUsuario(usuario.id)">Eliminar Usuario</a>
+        </div>
+        <div class="row">
+          <div *ngIf="usuarioEliminado" class="col s12">
+            <p>{{ usuarioEliminado }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="modal-close btn-flat">Cancelar</a>
+      </div>
+    </div>
+
+      <!-- Modal ADMINISTRADOR -->
+  <div id="modalA" class="modal">
+    <div class="modal-content">
+      <h4>Administrador Nuevo</h4>
+      <div class="row">
+        <div class="input-field col s12">
+          <label>nombre </label>
+          <input   [(ngModel)]="administrador.nombre"  type="text" class="validate">
+        </div>
+        <div class="input-field col s12">
+          <label>telefono </label>
+          <input [(ngModel)]="administrador.telefono"  type="text" class="validate">
+        </div>
+        <div class="input-field col s6">
+          <label>correo </label>
+          <input   [(ngModel)]="administrador.correo"  type="text" class="validate">
+        </div>
+        <div class="input-field col s6">
+          <label>contraseña </label>
+          <input   [(ngModel)]="administrador.contrasenia"  type="text" class="validate">
+        </div>
+      </div>
+      <div class="row">
+    </div>
+  </div>
+    <div class="modal-footer">
+        <a class="btn" (click)="registroA()">Agregar Administrador</a>
+        <a class="modal-close btn-flat">Cancelar</a>
+        
+    </div>
+  </div>
+
+    <div id="modal2A" class="modal">
+      <div class="modal-content">
+        <h4>Todos los Administradores</h4>
+        <div class="row">
+          <table>
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Correo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let administrador of listaAdministrador">
+                <td>{{ administrador.id }}</td>
+                <td>{{ administrador.nombre }}</td>
+                <td>{{ administrador.telefono }}</td>
+                <td>{{ administrador.correo }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="modal-close btn-flat">Cancelar</a>
+      </div>
+    </div>
+
+    <div id="modal3A" class="modal">
+      <div class="modal-content">
+        <h4>Ingresa el id del Administrador a buscar </h4>
+        <div class="input-field col s12">
+          <label>id </label>
+          <input [(ngModel)]="administrador.id" type="text" class="validate">
+          <a class="btn" (click)="listarOneA(administrador.id)">Buscar Administrador</a>
+        </div>
+        <div class="row">
+          <table *ngIf="administradorBuscado">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Correo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ administradorBuscado.id }}</td>
+                <td>{{ administradorBuscado.nombre }}</td>
+                <td>{{ administradorBuscado.telefono }}</td>
+                <td>{{ administradorBuscado.correo }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="modal-close btn-flat">Cancelar</a>
+      </div>
+    </div>
+
+    <div id="modal4A" class="modal">
+      <div class="modal-content">
+        <h4>Ingresa el id del Administrador a eliminar </h4>
+        <div class="input-field col s12">
+          <label>id </label>
+          <input [(ngModel)]="administrador.id" type="text" class="validate">
+          <a class="btn" (click)="eliminarAdministrador(administrador.id)">Eliminar Administrador</a>
+        </div>
+        <div class="row">
+          <div *ngIf="administradorEliminado" class="col s12">
+            <p>{{ administradorEliminado }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="modal-close btn-flat">Cancelar</a>
+      </div>
+    </div>
+
+
+    
+  <!-- Modal CASA -->
+  <div id="modalK" class="modal">
+    <div class="modal-content">
+      <h4>Casa Nueva</h4>
+      <div class="row">
+        <div class="input-field col s12">
+          <label>nombre </label>
+          <input   [(ngModel)]="casas.nombre"  type="text" class="validate">
+        </div>
+        <div class="input-field col s12">
+          <label>precio </label>
+          <input [(ngModel)]="casas.precio"  type="text" class="validate">
+        </div>
+        <div class="input-field col s6">
+          <label>Baños </label>
+          <input   [(ngModel)]="casas.banios"  type="text" class="validate">
+        </div>
+        <div class="input-field col s6">
+          <label>Estacionamiento </label>
+          <input   [(ngModel)]="casas.estacionamiento"  type="text" class="validate">
+        </div>
+        <div class="input-field col s6">
+            <label>Habitaciones </label>
+            <input   [(ngModel)]="casas.habitaciones"  type="text" class="validate">
+          </div>
+        <div class="input-field col s6">
+            <label>Descripcion </label>
+            <input   [(ngModel)]="casas.descripcion"  type="text" class="validate">
+          </div>
+      </div>
+      <div class="row">
+    </div>
+  </div>
+    <div class="modal-footer">
+        <a class="btn" (click)="registroK()">Agregar Casas</a>
+        <a class="modal-close btn-flat">Cancelar</a>
+        
+    </div>
+  </div>
+
+    <div id="modal2K" class="modal">
+      <div class="modal-content">
+        <h4>Todos las Casas</h4>
+        <div class="row">
+          <table>
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Banios</th>
+                <th>Estacionamiento</th>
+                <th>Habitaciones</th>
+                <th>Descripcion</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let casas of listaCasas">
+                <td>{{ casas.id }}</td>
+                <td>{{ casas.nombre }}</td>
+                <td>{{ casas.precio }}</td>
+                <td>{{ casas.banios }}</td>
+                <td>{{ casas.estacionamiento }}</td>
+                <td>{{ casas.habitaciones }}</td>
+                <td>{{ casas.descripcion }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="modal-close btn-flat">Cancelar</a>
+      </div>
+    </div>
+
+    <div id="modal3K" class="modal">
+      <div class="modal-content">
+        <h4>Ingresa el id de la casa a buscar </h4>
+        <div class="input-field col s12">
+          <label>id </label>
+          <input [(ngModel)]="casas.id" type="text" class="validate">
+          <a class="btn" (click)="listarOneK(casas.id)">Buscar Casa</a>
+        </div>
+        <div class="row">
+          <table *ngIf="casaBuscado">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Banios</th>
+                <th>Estacionamiento</th>
+                <th>Habitaciones</th>
+                <th>Descripcion</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ casaBuscado.id }}</td>
+                <td>{{ casaBuscado.nombre }}</td>
+                <td>{{ casaBuscado.precio }}</td>
+                <td>{{ casaBuscado.banios }}</td>
+                <td>{{ casaBuscado.estacionamiento }}</td>
+                <td>{{ casaBuscado.habitaciones }}</td>
+                <td>{{ casaBuscado.descripcion }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="modal-close btn-flat">Cancelar</a>
+      </div>
+    </div>
+
+    <div id="modal4K" class="modal">
+      <div class="modal-content">
+        <h4>Ingresa el id de la casa a eliminar </h4>
+        <div class="input-field col s12">
+          <label>id </label>
+          <input [(ngModel)]="casas.id" type="text" class="validate">
+          <a class="btn" (click)="eliminarCasa(casas.id)">Eliminar Casa</a>
+        </div>
+        <div class="row">
+          <div *ngIf="casaEliminado" class="col s12">
+            <p>{{ casaEliminado }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="modal-close btn-flat">Cancelar</a>
+      </div>
+    </div>
+
+
+      <!-- Modal Compras -->
+  <!-- Modal Cita -->
+
+
+
+  <div id="modal2CO" class="modal">
+    <div class="modal-content">
+      <h4>Todas las Compras</h4>
+      <div class="row">
+        <table>
+          <thead>
+            <tr>
+                <th>Id</th>
+              <th>Vendedor</th>
+              <th>Casa</th>
+              <th>Fecha</th>
+              <th>Usuario</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let compras of listaCompras">
+                <td>{{ compras.id }}</td>
+              <td>{{ compras.id_vendedor }}</td>
+              <td>{{ compras.id_casa }}</td>
+              <td>{{ compras.fecha }}</td>
+              <td>{{ compras.id_usuario}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-close btn-flat">Cancelar</a>
+    </div>
+  </div>
+
+
+  <div id="modal3CO" class="modal">
+    <div class="modal-content">
+      <h4>Ingresa el id de la compra a buscar </h4>
+      <div class="input-field col s12">
+        <label>id </label>
+        <input [(ngModel)]="compras.id" type="text" class="validate">
+        <a class="btn" (click)="listarOneCO(compras.id)">Buscar compra</a>
+      </div>
+      <div class="row">
+        <table *ngIf="compraBuscado">
+          <thead>
+            <tr>
+                <th>Id</th>
+                <th>Vendedor</th>
+                <th>Casa</th>
+                <th>Fecha</th>
+                <th>Usuario</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td>{{ compraBuscado.id }}</td>
+                <td>{{ compraBuscado.id_vendedor }}</td>
+                <td>{{ compraBuscado.id_casa }}</td>
+                <td>{{ compraBuscado.fecha }}</td>
+                <td>{{ compraBuscado.id_usuario}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-close btn-flat">Cancelar</a>
+    </div>
+  </div>
+
+
+  </main>
+  
+    <footer class="page-footer">
+        <div class="row">
+          <div class="col s12">
+            <p class="footer-text">&copy; 2024 Todos los derechos reservados</p>
+          </div>
+      </div>
+    </footer>
+    
+
+  <!-- Incluir los scripts de Materialize (asegúrate de incluir la biblioteca en tu proyecto) -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <!-- Inicializar algunos elementos de Materialize -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Inicializar etiquetas de Materialize
+      M.AutoInit();
+    });
+  </script>
+
+</body>
+</html>
